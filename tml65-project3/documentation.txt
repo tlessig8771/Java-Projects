@@ -1,0 +1,25 @@
+***DOCUMENTATION FOR APPROACH TO THIS PROJECT***
+
+Description:
+
+In order to maintain a max runtime of log(n), I needed to think of a way to
+maintain priority queues for min and max (one for rent and one for square footage).
+I also needed to come up with a way to retrieve by city, in which I decided to go 
+with creating a new PQ for each new city we encounter and adding it to a HashMap.
+I chose to implement java's hashmap capabilities as we know a good hashmap/hash function
+has a best case runtime of O(1). I create two HashMaps, one for gathering cities and
+one for min/max regarding rent/square footage. I also have a minimum of 3 PQ's, one for min
+rent, one for max square footage, and at least 2 for a city (although more will be created).
+And since each hashmap will have its own unique hashcode (since we cannot have more than 1 of 
+the same apartment), we ultimately avoid collisions. The tradeoff for my implementation is
+a more efficient runtime but more memory usage.
+
+Memory:
+
+There will be a PQ for min Rent and max Footage. Plus however many get created for every new 
+city the program encounters. I also have a resize pq method that increase the size by a factor of
+two, so it will only get extensively high memory consumption when we get to thousands/hundreds of 
+thousands of apartments.
+
+Run-time:
+We have O(1) for lookup. Insertion, update and removal we have O(log(n)).
