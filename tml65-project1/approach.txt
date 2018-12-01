@@ -1,0 +1,18 @@
+Approach to the User History File
+
+
+
+	I implemented the userHistory file using another DLB from my DLB class.
+	
+	To access two different DLB's I created separate methods in finding 
+	
+	suggestions. In each, I would find the node with the current string the 
+	user is searching for and start from that node to begin searching for 
+
+	word suggestions. In this sense, it should be a linear or log runtime as 
+	we are traversing the dlb to find certain characters. How I added the 
+	
+	"saved" words from the user, was by adding them to their own dlb, going
+ 	through said dlb and adding each word to an arraylist in which I would
+
+	just add each word from the list to the users file. 
